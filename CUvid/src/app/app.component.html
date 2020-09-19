@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span class="spacer"></span>
+  <button color="primary" style="margin-right: 10px" mat-raised-button (click)="mainCampus()">
+    Main Campus
+  </button>
+  <button color="primary" mat-raised-button (click)="williamsVillage()">
+    William's Village
+  </button>
+  
+</mat-toolbar>
+<agm-map [latitude]="lat" [longitude]="lng" [styles] = "styles" [usePanning]="true" [scrollwheel]="false" [restriction]="countryRestriction" [zoom] = "zoom">
+  <agm-marker *ngFor="let marker of markers" [visible]="false" [latitude]="marker.latitude" [longitude]="marker.longitude"></agm-marker>
+</agm-map>

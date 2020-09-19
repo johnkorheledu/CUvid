@@ -1,0 +1,15 @@
+agm-map {
+    height: 100vh;
+}
+
+.mat-toolbar{
+    color: #000;
+    background-color:#FFF;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+
+.landing-title{
+    color: #000;
+}
