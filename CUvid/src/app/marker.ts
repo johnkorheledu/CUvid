@@ -4,4 +4,5 @@ export interface Marker{
     description: string
     lat: number
     lng: number
+    url: string
 }

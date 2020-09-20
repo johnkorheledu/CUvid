@@ -5,42 +5,48 @@
       "name": "Main Campus",
       "description": "Main Campus.",
       "lat": 40.007667,
-      "lng": -105.265963
+      "lng": -105.265963,
+      "url": ""
     },
     {
       "id": 2,
       "name": "William's Village",
       "description": "William's Village",
       "lat": 39.998877,
-      "lng": -105.250336
+      "lng": -105.250336,
+      "url": ""
     },
     {
-      "id": 648661,
-      "name": "",
-      "description": "",
-      "lat": 40.01654169275981,
-      "lng": -105.26810876721191
+      "id": 338032,
+      "name": "Bear Creek Exodus",
+      "description": "One of my acquaintances works for CU Housing and Dining, and has recently been informed that higher ups in Residence Life are putting infected students into vacant apartments at bear creek. Because of HIPPA laws no one can know which apartments they are so there is no proper way to stay safe. On top of that not a single resident has been informed which means if they are informed, it will be after infected students have moved in which is too late. The biggest concern is that people will not always follow the rules, and potentially lock themselves out of the apartments, needing a temp key. They are posing a risk to others by interacting with people when they need said temp key and are utilizing shared spaces where other healthy students also congregate. If you live in bear creek or know anyone who does alert them, and stay safe buffs.",
+      "lat": 39.99696872076499,
+      "lng": -105.2502437403535,
+      "url": ""
     },
     {
-      "id": 170094,
-      "name": "",
-      "description": "",
-      "lat": 40.012712568714264,
-      "lng": -105.26376358860779
+      "id": 774457,
+      "name": "Will Ville North COVID Dorms?",
+      "description": "Looks like some of the dorms in Will Ville North are being converted into quarantine dorms. We all have no official knowledge of this. ",
+      "lat": 39.9988475580085,
+      "lng": -105.24817162400609,
+      "url": "https://preview.redd.it/krq076gozrn51.jpg?width=640&crop=smart&auto=webp&s=0b6669ce4f30eb0b44d606ca504af566cbed4639"
     },
     {
-      "id": 312509,
-      "name": "",
-      "description": "",
-      "lat": 40.00584261462283,
-      "lng": -105.26715390080261
+      "id": 285920,
+      "name": "Imagine not wearing a mask!",
+      "description": "Found this guy on the Buff Bus. Bus driver should NOT have let him on the bus without a mask.",
+      "lat": 40.0079464060677,
+      "lng": -105.25715286743164,
+      "url": "https://preview.redd.it/nc9cezwmk6n51.jpg?width=640&crop=smart&auto=webp&s=79c3e8d72c9ee29425a0fcdb4bd331419046ed55"
     },
     {
-      "id": 755301,
-      "name": "",
-      "description": "",
-      "lat": 40.00972142966909,
-      "lng": -105.25945059651184
+      "id": 372823,
+      "name": "Incident name",
+      "description": "The incident description",
+      "lat": 40.01079792612715,
+      "lng": -105.27037255162048,
+      "url": ""
     }
   ]
 }

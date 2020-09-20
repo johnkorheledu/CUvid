@@ -40,6 +40,7 @@ export class DialogOverviewExample {
 export class DialogOverviewExampleDialog {
   incident = new FormControl('');
   description = new FormControl('');
+  url = new FormControl('');
 
   lastLng
   lastLat
@@ -56,7 +57,8 @@ export class DialogOverviewExampleDialog {
       name: this.incident.value,
       description: this.description.value,
       lat: this.markerService.clickLat,
-      lng: this.markerService.clickLng
+      lng: this.markerService.clickLng,
+      url: this.url.value
     }
     this.markerService.addMarker(marker).subscribe(marker => this.markerService.addToMarkerList(marker));
     this.dialogRef.close();

@@ -6,17 +6,6 @@ import {Marker} from '../app/marker'
 import {MarkerServiceService} from './services/marker-service.service'
 import { DialogOverviewExampleDialog } from './components/dialog-overview-example';
 
-
-
-class Markers {
-  latitude: number
-  longitude: number
-  constructor(lat, lng) {
-    this.latitude = lat;
-    this.longitude = lng;
-  }
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -44,7 +33,7 @@ export class AppComponent implements OnInit {
   lat = 40.007667;
   lng = -105.265963;
   zoom = 16;
-  icon = '../assets/sick-24pxw.svg'
+  icon = '../assets/ldpi.png'
 
 
   openDialog(): void {
@@ -91,7 +80,8 @@ export class AppComponent implements OnInit {
         name: '',
         description: '',
         lat: e.latLng.lat(),
-        lng: e.latLng.lng()
+        lng: e.latLng.lng(),
+        url: ''
       })
       console.log(this.allMarkers)
       this.markerService.setClickLat(e.latLng.lat())

@@ -1,8 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-dialog-actions {
     justify-content: flex-end;
+}
+
+.agm-info-window-content{
+    font: 200 18px/18px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.gm-style .gm-style-iw-c {
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
 }

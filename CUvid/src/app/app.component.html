@@ -11,11 +11,24 @@
 <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [usePanning]="true" [scrollwheel]="false"
   [restriction]="countryRestriction" [zoom]="zoom" (mapReady)="onMapReady($event)">
   <div *ngIf="allMarkers">
-    <agm-marker *ngFor="let marker of allMarkers; trackBy: trackByFn()" [visible]="true"  [iconUrl]="icon" [latitude]="marker.lat" [longitude]="marker.lng">
+    <agm-marker *ngFor="let marker of allMarkers; trackBy: trackByFn()" [iconUrl]="icon" [visible]="true" maxlength="500" minlength="50" [latitude]="marker.lat" [longitude]="marker.lng">
       <agm-info-window [disableAutoPan]="true">
-        <strong>{{marker.name}}</strong>
-        <br>
-        {{marker.description}}
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <section class="mat-typography">
+            <strong class="titleText">{{marker.name}}</strong>
+          <br>
+          <br>
+          <span class="descriptionText">
+            {{marker.description}}
+          </span>
+          </section>
+          <br>
+          <div *ngIf="marker.url" fxLayout="col" fxLayoutAlign="center center">
+            <img style="width: 40%; text-align:center" src={{marker.url}}>
+          </div>
+        </div>
+        
+        
       </agm-info-window>
     </agm-marker>
   </div>

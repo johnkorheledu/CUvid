@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import {DialogOverviewExample, DialogOverviewExampleDialog} from './components/dialog-overview-example';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     MatButtonModule,
     HttpClientModule,
+    AgmSnazzyInfoWindowModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBUWS2GpVtXAnI_W67KUVUzdOBaEJX0Vt4'
     })
