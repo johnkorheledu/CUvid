@@ -1,0 +1,18 @@
+{
+    "markers": [
+        {
+            "id": 1,
+            "name": "Main Campus",
+            "description": "Main Campus.",
+            "lat": 40.007667,
+            "lng": -105.265963
+        },
+        {
+            "id": 2,
+            "name": "William's Village",
+            "description": "William's Village",
+            "lat": 39.998877,
+            "lng": -105.250336 
+        }
+    ]
+}

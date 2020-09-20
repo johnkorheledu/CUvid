@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Report an Incident</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width:100%">
+    <mat-label>Incident details...</mat-label>
+    <textarea matInput placeholder="Ex. Darley North is the new quarantine dorm?"></textarea>
+  </mat-form-field>
+  
+</div>
+<div mat-dialog-actions style="width:100%">
+  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="">Submit</button>
+</div>
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
