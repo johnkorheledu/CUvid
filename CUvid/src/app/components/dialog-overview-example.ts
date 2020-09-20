@@ -1,6 +1,10 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
+import { FormControl } from '@angular/forms';
+import { MarkerServiceService } from '../services/marker-service.service';
+import {Marker} from '../marker'
+
 
 
 /**
@@ -34,12 +38,32 @@ export class DialogOverviewExample {
   templateUrl: 'dialog-overview-example-dialog.html',
 })
 export class DialogOverviewExampleDialog {
+  incident = new FormControl('');
+  description = new FormControl('');
 
-  constructor(public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: {}) {}
+  lastLng
+  lastLat
+
+  constructor(public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: {}, private markerService: MarkerServiceService) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  submitMarker(){
+    const marker: Marker = {
+      id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
+      name: this.incident.value,
+      description: this.description.value,
+      lat: this.markerService.clickLat,
+      lng: this.markerService.clickLng
+    }
+    this.markerService.addMarker(marker).subscribe(marker => this.markerService.addToMarkerList(marker));
+    this.dialogRef.close();
+    this.lastLat = this.markerService.clickLat
+    this.lastLng = this.markerService.clickLng
+  }
+  
 
 }
 

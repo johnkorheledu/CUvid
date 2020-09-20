@@ -38,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     AgmCoreModule,
     FormsModule,
-    ReactiveFormsModule,
     MatInputModule
   ],
   providers: [

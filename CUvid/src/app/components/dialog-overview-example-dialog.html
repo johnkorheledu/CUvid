@@ -1,14 +1,19 @@
 <h1 mat-dialog-title>Report an Incident</h1>
 <div mat-dialog-content>
-  <mat-form-field style="width:100%">
-    <mat-label>Incident details...</mat-label>
-    <textarea matInput placeholder="Ex. Darley North is the new quarantine dorm?"></textarea>
+  <mat-form-field appearance="outline" style="width:100%">
+    <mat-label>Incident Name</mat-label>
+    <input [formControl]="incident" matInput placeholder="Quirky and relatable incident title">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width:100%">
+    <mat-label>Incident Description</mat-label>
+    <textarea [formControl]="description" matInput placeholder="Ex. Darley North is the new quarantine dorm?"></textarea>
   </mat-form-field>
   
 </div>
 <div mat-dialog-actions style="width:100%">
   <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
-  <button mat-stroked-button color="primary" [mat-dialog-close]="">Submit</button>
+  <button mat-stroked-button color="primary" (click)="submitMarker()">Submit</button>
 </div>
 
 

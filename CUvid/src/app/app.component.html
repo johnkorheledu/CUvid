@@ -1,19 +1,21 @@
 <mat-toolbar color="primary">
   <span>{{title}}</span>
   <span class="spacer"></span>
-  <button color="primary" style="margin-right: 10px" mat-raised-button (click)="mainCampus()">
+  <button style="margin-right: 10px" mat-raised-button (click)="mainCampus()">
     Main Campus
   </button>
-  <button color="primary" mat-raised-button (click)="williamsVillage()">
+  <button mat-raised-button (click)="williamsVillage()">
     William's Village
   </button>
 </mat-toolbar>
 <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [usePanning]="true" [scrollwheel]="false"
   [restriction]="countryRestriction" [zoom]="zoom" (mapReady)="onMapReady($event)">
   <div *ngIf="allMarkers">
-    <agm-marker *ngFor="let marker of allMarkers" [visible]="true" [latitude]="marker.lat" [longitude]="marker.lng">
+    <agm-marker *ngFor="let marker of allMarkers; trackBy: trackByFn()" [visible]="true"  [iconUrl]="icon" [latitude]="marker.lat" [longitude]="marker.lng">
       <agm-info-window [disableAutoPan]="true">
-        Hi, this is the content of the <strong>info window</strong>
+        <strong>{{marker.name}}</strong>
+        <br>
+        {{marker.description}}
       </agm-info-window>
     </agm-marker>
   </div>

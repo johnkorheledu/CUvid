@@ -4,15 +4,6 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyBUWS2GpVtXAnI_W67KUVUzdOBaEJX0Vt4",
-    authDomain: "cuvid-289920.firebaseapp.com",
-    databaseURL: "https://cuvid-289920.firebaseio.com",
-    projectId: "cuvid-289920",
-    storageBucket: "cuvid-289920.appspot.com",
-    messagingSenderId: "730713290044",
-    appId: "1:730713290044:web:bccb9aec655b9da5245a39"
-  }
 };
 
 /*

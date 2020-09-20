@@ -3,8 +3,8 @@ agm-map {
 }
 
 .mat-toolbar{
-    color: #000;
-    background-color:#FFF;
+    color: #fff;
+    background-color:#121212;
 }
 .spacer{
     flex: 1 1 auto;
