@@ -1,25 +1,34 @@
 agm-map {
-    height: 100vh;
+  height: 93.4vh;
 }
 
-.mat-toolbar{
-    color: #fff;
-    background-color:#121212;
+.mat-toolbar {
+  color: #fff;
+  background-color: #121212;
 }
-.spacer{
-    flex: 1 1 auto;
-}
-
-.landing-title{
-    color: #000;
+.spacer {
+  flex: 1 1 auto;
 }
 
-.titleText{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+.landing-title {
+  color: #000;
 }
 
-.descriptionText{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+.titleText {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.descriptionText {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.header-image {
+  background-image: url("../assets/blank.png");
+  background-size: cover;
 }

@@ -1,11 +1,13 @@
-import {Component, Inject} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MarkerServiceService } from '../services/marker-service.service';
-import {Marker} from '../marker'
-
-
+import { Marker } from '../marker';
 
 /**
  * @title Dialog Overview
@@ -15,7 +17,6 @@ import {Marker} from '../marker'
   templateUrl: 'dialog-overview-example.html',
 })
 export class DialogOverviewExample {
-
   animal: string;
   name: string;
 
@@ -23,14 +24,13 @@ export class DialogOverviewExample {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '30%'
+      width: '30%',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
   }
-
 }
 
 @Component({
@@ -38,37 +38,42 @@ export class DialogOverviewExample {
   templateUrl: 'dialog-overview-example-dialog.html',
 })
 export class DialogOverviewExampleDialog {
-  incident = new FormControl('');
-  description = new FormControl('');
-  url = new FormControl('');
+  incidentForm = new FormGroup({
+    incident: new FormControl(''),
+    description: new FormControl(''),
+    url: new FormControl(''),
+  });
 
-  lastLng
-  lastLat
+  lastLng;
+  lastLat;
 
-  constructor(public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: {}, private markerService: MarkerServiceService) {}
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: {},
+    private markerService: MarkerServiceService
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  submitMarker(){
+  submitMarker() {
     const marker: Marker = {
       id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
-      name: this.incident.value,
-      description: this.description.value,
+      name: this.incidentForm.get('incident').value,
+      description: this.incidentForm.get('description').value,
       lat: this.markerService.clickLat,
       lng: this.markerService.clickLng,
-      url: this.url.value
-    }
-    this.markerService.addMarker(marker).subscribe(marker => this.markerService.addToMarkerList(marker));
+      url: this.incidentForm.get('url').value,
+    };
+    this.markerService
+      .addMarker(marker)
+      .subscribe((marker) => this.markerService.addToMarkerList(marker));
     this.dialogRef.close();
-    this.lastLat = this.markerService.clickLat
-    this.lastLng = this.markerService.clickLng
+    this.lastLat = this.markerService.clickLat;
+    this.lastLng = this.markerService.clickLng;
   }
-  
-
 }
-
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

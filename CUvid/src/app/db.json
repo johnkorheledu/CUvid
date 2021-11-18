@@ -1,22 +1,6 @@
 {
   "markers": [
     {
-      "id": 1,
-      "name": "Main Campus",
-      "description": "Main Campus.",
-      "lat": 40.007667,
-      "lng": -105.265963,
-      "url": ""
-    },
-    {
-      "id": 2,
-      "name": "William's Village",
-      "description": "William's Village",
-      "lat": 39.998877,
-      "lng": -105.250336,
-      "url": ""
-    },
-    {
       "id": 338032,
       "name": "Bear Creek Exodus",
       "description": "One of my acquaintances works for CU Housing and Dining, and has recently been informed that higher ups in Residence Life are putting infected students into vacant apartments at bear creek. Because of HIPPA laws no one can know which apartments they are so there is no proper way to stay safe. On top of that not a single resident has been informed which means if they are informed, it will be after infected students have moved in which is too late. The biggest concern is that people will not always follow the rules, and potentially lock themselves out of the apartments, needing a temp key. They are posing a risk to others by interacting with people when they need said temp key and are utilizing shared spaces where other healthy students also congregate. If you live in bear creek or know anyone who does alert them, and stay safe buffs.",
@@ -39,14 +23,6 @@
       "lat": 40.0079464060677,
       "lng": -105.25715286743164,
       "url": "https://preview.redd.it/nc9cezwmk6n51.jpg?width=640&crop=smart&auto=webp&s=79c3e8d72c9ee29425a0fcdb4bd331419046ed55"
-    },
-    {
-      "id": 372823,
-      "name": "Incident name",
-      "description": "The incident description",
-      "lat": 40.01079792612715,
-      "lng": -105.27037255162048,
-      "url": ""
     }
   ]
 }

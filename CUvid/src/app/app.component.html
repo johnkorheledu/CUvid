@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span>{{title}}</span>
+  <span>{{ title }}</span>
   <span class="spacer"></span>
   <button style="margin-right: 10px" mat-raised-button (click)="mainCampus()">
     Main Campus
@@ -8,27 +8,49 @@
     William's Village
   </button>
 </mat-toolbar>
-<agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [usePanning]="true" [scrollwheel]="false"
-  [restriction]="countryRestriction" [zoom]="zoom" (mapReady)="onMapReady($event)">
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [styles]="styles"
+  [usePanning]="true"
+  [scrollwheel]="false"
+  [restriction]="countryRestriction"
+  [disableDefaultUI]="true"
+  [zoom]="zoom"
+  [disableDoubleClickZoom]="true"
+  (mapReady)="onMapReady($event)"
+>
   <div *ngIf="allMarkers">
-    <agm-marker *ngFor="let marker of allMarkers; trackBy: trackByFn()" [iconUrl]="icon" [visible]="true" maxlength="500" minlength="50" [latitude]="marker.lat" [longitude]="marker.lng">
+    <agm-marker
+      *ngFor="let marker of allMarkers; trackBy: trackByFn()"
+      [iconUrl]="icon"
+      [visible]="true"
+      maxlength="500"
+      minlength="50"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+    >
       <agm-info-window [disableAutoPan]="true">
-        <div fxLayout="row" fxLayoutAlign="space-between">
-          <section class="mat-typography">
-            <strong class="titleText">{{marker.name}}</strong>
-          <br>
-          <br>
-          <span class="descriptionText">
-            {{marker.description}}
-          </span>
-          </section>
-          <br>
-          <div *ngIf="marker.url" fxLayout="col" fxLayoutAlign="center center">
-            <img style="width: 40%; text-align:center" src={{marker.url}}>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>{{ marker.name }}</mat-card-title>
+            <mat-card-subtitle>Incident {{ marker.id }}</mat-card-subtitle>
+          </mat-card-header>
+          <div *ngIf="marker.url">
+            <img
+              mat-card-image
+              src="marker.url"
+              alt="Incident image"
+              onerror="this.style.display='none'"
+            />
           </div>
-        </div>
-        
-        
+          <mat-card-content>
+            <p>
+              {{ marker.description }}
+            </p>
+          </mat-card-content>
+        </mat-card>
       </agm-info-window>
     </agm-marker>
   </div>

@@ -1,60 +1,49 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Marker} from '../marker'
-import {Observable} from 'rxjs'
-import {catchError} from 'rxjs/operators/catchError'; 
-import {throwError} from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
-
-
+import { Marker } from '../marker';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MarkerServiceService {
-  clickLng
-  clickLat
-  clickDesc
-  clickIncident
+  clickLng;
+  clickLat;
+  clickDesc;
+  clickIncident;
+  markers = [];
 
-  markers
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getMarkers() {
-    return this.http.get<Marker[]>("http://localhost:3000/markers");
+    return this.http.get<Marker[]>('http://localhost:3000/markers');
   }
 
   addMarker(marker: Marker): Observable<Marker> {
-    return this.http.post<Marker>('http://localhost:3000/markers', marker)
+    return this.http.post<Marker>('http://localhost:3000/markers', marker);
   }
 
-  setClickLat(lat){
+  setClickLat(lat) {
     this.clickLat = lat;
-
   }
 
-  setClickLng(lng){
+  setClickLng(lng) {
     this.clickLng = lng;
   }
 
-  setClickDesc(desc){
-    this.clickDesc = desc
+  setClickDesc(desc) {
+    this.clickDesc = desc;
   }
 
-  setIncident(incident){
-    this.setIncident = incident
+  setIncident(incident) {
+    this.setIncident = incident;
   }
 
-  addToMarkerList(marker){
-    this.markers.push(marker)
+  addToMarkerList(marker) {
+    this.markers.push(marker);
   }
 
-  getMarkerList(){
-    return this.markers
+  getMarkerList() {
+    return this.markers;
   }
-
-
-
-
 }

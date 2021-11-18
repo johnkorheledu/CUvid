@@ -1,29 +1,52 @@
-<h1 mat-dialog-title>Report an Incident</h1>
-<div mat-dialog-content>
-  <mat-form-field appearance="outline" style="width:100%">
-    <mat-label>Incident Name</mat-label>
-    <input [formControl]="incident" matInput placeholder="Quirky and relatable incident title">
-    <mat-hint align="end">{{incident.value?.length || 0}}/30</mat-hint>
-  </mat-form-field>
+<form [formGroup]="incidentForm">
+  <h1 mat-dialog-title>Report an Incident</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Incident Name</mat-label>
+      <input
+        formControlName="incident"
+        matInput
+        placeholder="Quirky and relatable incident title"
+        required
+      />
+      <!-- <mat-hint align="end">{{incident.value?.length || 0}}/30</mat-hint> -->
+    </mat-form-field>
 
-  <mat-form-field appearance="outline" style="width:100%">
-    <mat-label>Incident Description</mat-label>
-    <textarea [formControl]="description" matInput placeholder="Ex. Darley North is the new quarantine dorm?"></textarea>
-    <mat-hint align="end">{{description.value?.length || 0}}/500</mat-hint>
-  </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Incident Description</mat-label>
+      <textarea
+        formControlName="description"
+        matInput
+        placeholder="Ex. Darley North is the new quarantine dorm?"
+        required
+      ></textarea>
+      <!-- <mat-hint align="end">{{description.value?.length || 0}}/500</mat-hint> -->
+    </mat-form-field>
 
-  <mat-form-field appearance="outline" style="width:100%">
-    <mat-label>Image URL</mat-label>
-    <input [formControl]="url" matInput placeholder="Quirky and relatable URL">
-  </mat-form-field>
-  
-</div>
-<div mat-dialog-actions style="width:100%">
-  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
-  <button mat-stroked-button color="primary" (click)="submitMarker()">Submit</button>
-</div>
-
-
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Image URL</mat-label>
+      <input
+        formControlName="url"
+        matInput
+        placeholder="Quirky and relatable URL"
+      />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions style="width: 100%">
+    <button mat-stroked-button color="warn" (click)="onNoClick()">
+      Cancel
+    </button>
+    <button
+      type="submit"
+      [disabled]="!incidentForm.valid"
+      mat-stroked-button
+      color="primary"
+      (click)="submitMarker()"
+    >
+      Submit
+    </button>
+  </div>
+</form>
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->
